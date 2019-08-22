@@ -1,3 +1,4 @@
+require "pry"
 describe "Grocer" do
   let(:items) do
     [
@@ -66,7 +67,9 @@ describe "Grocer" do
       end
 
       it "adds the count number to the property hash of couponed item" do
+       binding.pry
         expect(@avocado_result["AVOCADO W/COUPON"][:count]).to eq(2)
+        
       end
 
       it "removes the number of discounted items from the original item's count" do
