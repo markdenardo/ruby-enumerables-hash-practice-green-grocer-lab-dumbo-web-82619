@@ -1,3 +1,4 @@
+#require "pry"
 describe "Grocer" do
   let(:items) do
     [
@@ -54,6 +55,7 @@ describe "Grocer" do
         @avocado_coupon = coupons.find { |coupon| coupon[:item] == "AVOCADO" }
         @cart = [@avocado, @avocado]
         @consolidated_cart = consolidate_cart(@cart)
+       # binding.pry
         @avocado_result = apply_coupons(@consolidated_cart, [@avocado_coupon])
       end
 
@@ -66,7 +68,9 @@ describe "Grocer" do
       end
 
       it "adds the count number to the property hash of couponed item" do
+      # binding.pry
         expect(@avocado_result["AVOCADO W/COUPON"][:count]).to eq(2)
+        
       end
 
       it "removes the number of discounted items from the original item's count" do
