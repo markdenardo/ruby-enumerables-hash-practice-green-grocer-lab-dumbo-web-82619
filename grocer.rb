@@ -17,6 +17,7 @@ def apply_coupons(cart, coupons)
       name = coupon[:item] 
     
       if cart[name] && cart[name][:count] >= coupon[:num] 
+        binding.pry
         if cart["#{name} W/COUPON"] 
           cart["#{name} W/COUPON"][:count] += 1 
         else 
