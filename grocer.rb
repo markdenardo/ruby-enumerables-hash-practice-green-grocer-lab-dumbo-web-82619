@@ -1,4 +1,4 @@
-require "pry"
+#require "pry"
 def consolidate_cart(cart) 
   new_cart = {} 
   cart.each do |items_array| 
@@ -12,7 +12,7 @@ new_cart
 end
 
 def apply_coupons(cart, coupons) 
-  
+  if coupons.length > 0
   coupons.each do |coupon| 
     # binding.pry
       name = coupon[:item] 
@@ -25,6 +25,7 @@ def apply_coupons(cart, coupons)
           cart[name][:count] -= coupon[:num] 
       end 
   end
+end
   cart 
 end
 
