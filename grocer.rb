@@ -20,6 +20,7 @@ def apply_coupons(cart, coupons)
       if cart[name] && cart[name][:count] >= coupon[:num] 
         
         if cart["#{name} W/COUPON"] 
+          binding.pry
           cart["#{name} W/COUPON"][:count] += 1 
         else 
           cart["#{name} W/COUPON"] = {:price => coupon[:cost]/coupon[:num], 
