@@ -1,4 +1,4 @@
-require "pry"
+#require "pry"
 describe "Grocer" do
   let(:items) do
     [
@@ -55,7 +55,7 @@ describe "Grocer" do
         @avocado_coupon = coupons.find { |coupon| coupon[:item] == "AVOCADO" }
         @cart = [@avocado, @avocado]
         @consolidated_cart = consolidate_cart(@cart)
-        binding.pry
+       # binding.pry
         @avocado_result = apply_coupons(@consolidated_cart, [@avocado_coupon])
       end
 
