@@ -1,3 +1,4 @@
+require "pry"
 def consolidate_cart(cart) 
   new_cart = {} 
   cart.each do |items_array| 
